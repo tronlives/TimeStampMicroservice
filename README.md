@@ -1,15 +1,34 @@
-Timestamp Microservice
 
--A request to /api/timestamp/:date? with a valid date should return a JSON object with a unix key that is a Unix timestamp of the input date in milliseconds
+# API Project: Timestamp Microservice for FCC
+[![Run on Repl.it](https://repl.it/badge/github/freeCodeCamp/boilerplate-project-timestamp)](https://timestamp-microservice.andradeoromulo.repl.co/)
 
--A request to /api/timestamp/:date? with a valid date should return a JSON object with a utc key that is a string of the input date in the format: Thu, 01 Jan 1970 00:00:00 GMT
+## About
+This is my project of the [Timestamp Microservice challenge](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/timestamp-microservice) for the freeCodeCamp API and Microservice certification. It was built based on the boilerplate available [here](https://github.com/freeCodeCamp/boilerplate-project-timestamp/).
 
--A request to /api/timestamp/1451001600000 should return { unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" }
+## Endpoints:
 
--Your project can handle dates that can be successfully parsed by new Date(date_string)
+Endpoints | Description
+----------|-------------
+GET `/api/timestamp` | Return a date object with unix timestamp and UTC timestamp of the current timestamp
+GET `/api/timestamp/{dateParam}` | Return a date object of the informed timestamp (unix or UTC ISO-8601)
 
--If the input date string is invalid, the api returns an object having the structure { error : "Invalid Date" }
+#### Example usage:
+* https://timestamp-microservice.andradeoromulo.repl.co/api/timestamp
+* https://timestamp-microservice.andradeoromulo.repl.co/api/timestamp/2015-12-25
+* https://timestamp-microservice.andradeoromulo.repl.co/api/timestamp/1451001600000
 
--An empty date parameter should return the current time in a JSON object with a unix key
+#### Example output:
+* `{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}`
+* `{"error" : "Invalid Date" }`
 
--An empty date parameter should return the current time in a JSON object with a utc key
+## How to use:
+Just run on terminal:
+```
+npm install
+npm start
+```
+
+## Feedback
+I'm a student and I really would like to hear case you have any tips, correction suggestions or comments about any my of projects (🤓).
+
+
